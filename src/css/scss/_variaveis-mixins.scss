@@ -1,0 +1,52 @@
+// Colors
+$primary-color: #27AE60;
+$secondary-color: #34495E;
+$accent-color: #7F8C8D;
+$assistant-color: #ECF0F1;
+$star-color: #F39C12;
+
+// Fonts
+$type-1: 'Rubik', Helvetica, sans-serif;
+$type-2: 'Karla', Arial, sans-serif;
+
+// Sizes
+$margins-extern: 20px;
+$margins-intern: 10px;
+$radius: 5px;
+
+// Convert px to em
+@function em($px, $base:16) {
+  @return ($px / $base) + em;
+}
+
+// set types style fonts
+@mixin type-1($size) {
+  font-family: $type-1;
+  @if $size == 30 {
+    font-size: em(30);
+    line-height: em(40, 30);
+  } @else if $size == 24 {
+    font-size: em(24);
+    line-height: em(30, 24);
+  } @else if $size == 18 {
+    font-size: em(18);
+    line-height: em(25, 18);
+  } @else if $size == 14 {
+    font-size: em(14);
+    line-height: em(20, 14);
+  }
+}
+
+@mixin type-2($size) {
+  font-family: $type-2;
+  @if $size == 18 {
+    font-size: em(18);
+    line-height: em(25, 18);
+  } @else if $size == 14 {
+    font-size: em(14);
+    line-height: em(20, 14);
+  } @else if $size == 10 {
+    font-size: em(10);
+    line-height: em(15, 10);
+  }
+}

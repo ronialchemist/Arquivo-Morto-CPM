@@ -1,0 +1,250 @@
+@import 'reset';
+@import 'grid';
+@import 'variaveis-mixins';
+
+body {
+  padding-bottom: 20px;
+}
+
+nav {
+  background: $primary-color;
+  max-width: 100%;
+  padding: 10px 0;
+}
+
+.navbar {
+  &__brand {
+    @include d(m) {
+      width: grid(10);
+    }
+
+    img {
+      color: $assistant-color;
+      width: 60px;
+      height: 60px;
+      display: block;
+      border-radius: 100%;
+      float: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: em(22);
+    }
+    p {
+      @include type-1(24);
+      display: inline-block;
+      color: $secondary-color;
+      margin: 15px 10px;
+    }
+  }
+  & div:nth-child(3) {
+    @include d(m) {
+      width: grid(10);
+    }
+  }
+  &__nav {
+    float: right;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  &__link {
+    @include type-1(18);
+    color: $secondary-color;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    &--active {
+      text-decoration: underline;
+    }
+    &--button {
+      background: $secondary-color;
+      border-radius: $radius;
+      padding: 5px 10px;
+      a {
+        color: $assistant-color;
+      }
+    }
+  }
+
+  @include d(s) {
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+      display: flex;
+      justify-content: center;
+    }
+    &__brand {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.card {
+  background: $assistant-color;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: $radius;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  
+  &__title {
+    @include type-1(30);
+    width: 100%;
+    text-align: center;
+    color: $secondary-color;
+    font-weight: bold;
+    
+  }
+  &__logo {
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &--home {
+    padding: 40px 20px;
+  }
+  &--cadastro {
+    .grid-8, .grid-12, .grid-4 {
+      margin: 10px;
+    }
+    @include d(m) {
+      .grid-12, .grid-4 {
+        width: grid(16);
+      }
+    }
+    @include d(s) {
+      .grid-12, .grid-4 {
+        width: grid(16);
+      }
+    }
+  }
+  &--search {
+    .grid-4 {
+      margin-left: 20px;
+      width: 25%
+    }
+  }
+}
+
+.input {
+  @include type-1(14);
+  display: inline-block;
+  height: 40px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  background: $secondary-color;
+  color: $assistant-color; 
+  outline: none;
+  border: none;
+  &::placeholder {
+    color: $assistant-color;
+  }
+
+  &--group {
+    width: calc(50% - 10px);
+    &:last-child {
+      margin-left: 20px !important;
+    }
+  }
+}
+
+.btn {
+  @include type-1(18);
+  background: $primary-color;
+  color: $assistant-color;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 40px;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+
+  &__header {
+    border-bottom: 3px solid $accent-color;    
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 15px;
+
+    p {
+      @include type-1(18);
+      color: $primary-color;
+      font-weight: bold;
+
+      &:nth-child(1) {
+        min-width: 35px !important;
+      }
+      &:nth-child(2) {
+        min-width: calc(100% - 145px) !important;
+      }
+      &:nth-child(3) {
+        min-width: 60px !important;
+      }
+      &:nth-child(4) {
+        min-width: 50px !important;
+      }
+    }
+  }
+  &__row {
+    width: 100%;
+    border-bottom: 3px solid $accent-color;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+
+    p {
+      @include type-1(18);
+      color: $secondary-color !important;
+      font-weight: normal !important;
+
+      &:nth-child(1) {
+        font-weight: bold;
+        min-width: 35px !important;
+      }
+      &:nth-child(2) {
+        min-width: calc(100% - 145px) !important;
+        padding-right: 10px;
+      }
+      &:nth-child(3) {
+        min-width: 60px !important;
+      }
+      &:nth-child(4) {
+        min-width: 50px !important;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    div {
+      margin: 0;
+      width: auto;
+      flex-wrap: wrap;
+
+      .btn {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        padding: 8px 30px !important;
+      }
+      button {
+        background: $accent-color;
+      }
+    }
+  }
+}
