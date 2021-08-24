@@ -18,6 +18,7 @@ selectElement('#searchForm').addEventListener('submit', async evt => {
     const data = await response.json(); 
 
     selectElement('#tableBody').innerHTML = '';
+    selectElement('#table').setAttribute('style', 'display: none');
 
     data.forEach(file => {
       selectElement('#tableBody').innerHTML += `
