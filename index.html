@@ -19,6 +19,10 @@
 	  <meta property="og:description" content="Gerenciador de arquivo morto do CPM" />
 	  <meta property="og:url" content="" />
 	  <meta property="og:image" content="" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="src/js/utils.js" defer></script>
+		<script src="src/js/script.js" defer></script>
     <title>Arquivo Morto CPM</title>
   </head>
   <body>
@@ -46,31 +50,19 @@
 			<h1 class="title">Buscar</h1>
 			<p class="subtitle subtitle--search">Pesquisar arquivo morto de um aluno através do nome</p>
 			
-			<form class="grid-16 card">
-				<input class="input grid-12" name="nome" type="text" placeholder="Nome" required>
+			<form class="grid-16 card" id="searchForm">
+				<input class="input grid-12" name="nome" type="text" placeholder="Nome" id="searchInput" required>
 				<button class="btn grid-4" name="buscar" type="submit">Buscar</button>
 			</form>
 
-			<div class="grid-16 table card card--result">
+			<div class="grid-16 table card card--result" id="table" style="display: none">
 				<div class="table__header">
 					<p>Nº</p>
 					<p>Nome</p>
 					<p>Caixa</p>
 					<p>Editar</p>
 				</div>
-				<div class="table__body">
-					<div class="table__row">
-						<p>01</p>
-						<p>Higor Cardoso Silva Gostosão da Pombona</p>
-						<p>01 A</p>
-						<p align="center"><a href=""><i class="far fa-edit"></i></a></p>
-					</div>
-					<div class="table__row">
-						<p>02</p>
-						<p>Ronildo Anão</p>
-						<p>03 C</p>
-						<p align="center"><a href=""><i class="far fa-edit"></i></a></p>
-					</div>
+				<div class="table__body" id="tableBody">
 				</div>
 			</div>
 		</section>
