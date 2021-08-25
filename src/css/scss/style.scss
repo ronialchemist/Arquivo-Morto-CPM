@@ -28,7 +28,7 @@ nav {
       @include type-1(24);
       display: inline-block;
       color: $secondary-color;
-      margin: 15px 10px;
+      margin: 15px 20px;
     }
   }
 
@@ -111,10 +111,10 @@ nav {
       color: $primary-color;
 
       &:nth-child(1) {
-        min-width: 35px !important;
+        min-width: 50px !important;
       }
       &:nth-child(2) {
-        min-width: calc(100% - 155px) !important;
+        min-width: calc(100% - 170px) !important;
       }
       &:nth-child(3) {
         min-width: 70px !important;
@@ -133,12 +133,13 @@ nav {
     p {
       @include type-1(18);
       color: $secondary-color !important;
+      text-transform: uppercase;
 
       &:nth-child(1) {
-        min-width: 35px !important;
+        min-width: 50px !important;
       }
       &:nth-child(2) {
-        min-width: calc(100% - 155px) !important;
+        min-width: calc(100% - 170px) !important;
         padding-right: 10px;
       }
       &:nth-child(3) {
@@ -146,6 +147,7 @@ nav {
       }
       &:nth-child(4) {
         min-width: 50px !important;
+        text-align: center;
       }
     }
 
@@ -194,5 +196,19 @@ nav {
   @include d(s) {
     margin-right: 0;
     margin-left: 0;
+  }
+}
+
+.alert {
+  background: $assistant-color;
+  color: $secondary-color;
+  width: 100%;
+  padding: 10px 20px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+
+  p {
+    @include type-2(18)
   }
 }
