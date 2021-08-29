@@ -1,6 +1,5 @@
-selectElement('#searchForm').addEventListener('submit', async evt => {
+const index = async evt => {
   try {
-    debugger;
     evt.preventDefault();
 
     const name = selectElement('#searchInputName')
@@ -11,14 +10,18 @@ selectElement('#searchForm').addEventListener('submit', async evt => {
 
     const getFilesUrl = `http://127.0.0.1:3000/files?name=${name}`;
 
+    const error = nameValidator(name.replace(/\+/g, ' '));
+
+    if (error) {
+      throw error.message;
+    }
+
     const response = await fetch(getFilesUrl);
 
     const bodyData = await response.json(); 
 
-    if (response.status != 200) {
-      throw bodyData;
-    } else if (!bodyData.length) {
-      throw { error: 'Arquivo não encontrado' };
+    if (bodyData.length === 0) {
+      throw 'nenhum dado encontrado';
     }
 
     selectElement('#tableBody').innerHTML = '';
@@ -37,6 +40,8 @@ selectElement('#searchForm').addEventListener('submit', async evt => {
 
     $('#table').fadeIn('slow');
   } catch (e) {
-    alert(e.error);
+    alert(e);
   }
-});
+}
+
+selectElement('#searchForm').addEventListener('submit', index);

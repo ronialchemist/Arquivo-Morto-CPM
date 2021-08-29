@@ -1,4 +1,4 @@
-const test = (name) => {
+const nameValidator = (name) => {
 	const schema = joi.object({
 		name: joi
 					.string()
@@ -16,5 +16,5 @@ const test = (name) => {
 
 	const { error } = schema.validate({ name });
 
-	return error.message;
+	return error;
 }
