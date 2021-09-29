@@ -21,7 +21,7 @@ const index = async evt => {
     const bodyData = await response.json(); 
 
     if (bodyData.length === 0) {
-      throw 'nenhum dado encontrado';
+      throw 'nenhum arquivo encontrado';
     }
 
     selectElement('#tableBody').innerHTML = '';
@@ -40,7 +40,10 @@ const index = async evt => {
 
     $('#table').fadeIn('slow');
   } catch (e) {
-    alert(e);
+    customSwal.fire({
+      title: e,
+      icon: 'error'
+    }); 
   }
 }
 
