@@ -12,7 +12,6 @@
 		
     <!-- Estilos do CSS -->
 	  <link rel="stylesheet" href="./src/css/style.css">
-	  <link rel="stylesheet" href="./src/css/test.css">
 
     <!-- INFORMAÇÕES DO LINK -->
     <link rel="shortcut icon" href="./src/img/favicon.ico">
@@ -45,18 +44,18 @@
 
 		<section class="container">
 			<h1 class="title">Cadastrar</h1>
-			<p class="subtitle subtitle--register">Cadastrar arquivo</p>
-			<form class="grid-16 card">
-				<input class="input grid-8" name="cadNum" type="text" placeholder="Nº" required>
-				<input class="input grid-8" name="cadBox" type="text" placeholder="Caixa" required>
-				<input class="input grid-12" name="cadName" type="text" placeholder="Nome" required>
+			<p class="subtitle subtitle--register">Cadastrar o arquivo do aluno</p>
+			<form class="grid-16 card" id="registerForm">
+				<input class="input grid-8 registerInput" name="cadNum" type="text" placeholder="Nº" required>
+				<input class="input grid-8 registerInput" name="cadBox" type="text" placeholder="Caixa" required>
+				<input class="input grid-12 registerInput" name="cadName" type="text" placeholder="Nome" required>
 				<button class="btn grid-4" name="cadastrar" type="submit">Cadastrar</button>
 			</form>
 		</section>
 
 		<section class="container">
 			<h1 class="title">Localizar</h1>
-			<p class="subtitle subtitle--search">Localizar arquivo</p>
+			<p class="subtitle subtitle--search">Localizar o arquivo do aluno</p>
 			
 			<form class="grid-16 card" id="searchForm">
 				<input class="input grid-12" name="nome" type="text" placeholder="Nome" id="searchInputName" required>
