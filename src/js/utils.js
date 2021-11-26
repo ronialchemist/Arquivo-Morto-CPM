@@ -23,6 +23,9 @@ const nameValidator = (name) => {
 
 const customSwal = Swal.mixin({
 	customClass: {
-		title: 'test'
+		popup: 'alert',
+		icon: 'iconAlert',
+		title: 'titleAlert',
+		confirmButton: 'btnAlert',
 	}
 });

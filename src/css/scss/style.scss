@@ -109,18 +109,27 @@ nav {
     p {
       @include type-1(18);
       color: $primary-color;
+      text-transform: uppercase;
 
       &:nth-child(1) {
         min-width: 50px !important;
       }
       &:nth-child(2) {
-        min-width: calc(100% - 170px) !important;
+        min-width: calc(100% - 365px) !important;
       }
       &:nth-child(3) {
         min-width: 70px !important;
       }
       &:nth-child(4) {
-        min-width: 50px !important;
+        min-width: 85px !important;
+      }
+      &:nth-child(5) {
+        min-width: 90px !important;
+        text-align: center;
+      }
+      &:nth-child(6) {
+        min-width: 70px !important;
+        text-align: center;
       }
     }
   }
@@ -139,14 +148,21 @@ nav {
         min-width: 50px !important;
       }
       &:nth-child(2) {
-        min-width: calc(100% - 170px) !important;
+        min-width: calc(100% - 365px) !important;
         padding-right: 10px;
       }
       &:nth-child(3) {
         min-width: 70px !important;
       }
       &:nth-child(4) {
-        min-width: 50px !important;
+        min-width: 85px !important;
+      }
+      &:nth-child(5) {
+        min-width: 90px !important;
+        text-align: center;
+      }
+      &:nth-child(6) {
+        min-width: 70px !important;
         text-align: center;
       }
     }
@@ -211,4 +227,39 @@ nav {
   p {
     @include type-2(18)
   }
+}
+
+.alert {
+  background: $assistant-color !important;
+  padding: 40px 20px !important;
+}
+
+.iconAlert {
+  margin: 10px auto !important;
+}
+
+.titleAlert {
+  font-family: $type-1 !important;
+  font-size: em(24) !important;
+  line-height: em(30, 24) !important;
+  color: $secondary-color !important;
+  padding: 24px 0 24px !important;
+}
+
+.btnAlert {
+  font-family: $type-1 !important;
+  font-size: em(14) !important;
+  line-height: em(20, 14) !important;
+  background-color: $primary-color !important;
+  color: $assistant-color !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+  border: none !important;
+  outline: none !important;
+  height: 40px !important;
+  width: 200px !important;
+  padding-top: 11px !important;
+  cursor: pointer !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }

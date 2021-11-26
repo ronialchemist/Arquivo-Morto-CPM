@@ -33,7 +33,7 @@ const index = async evt => {
 				  <p>${file.number}</p>
 					<p>${file.name}</p>
 					<p>${file.box}</p>
-					<p align="center"><a href=""><i class="far fa-edit"></i></a></p>
+					<p><a href=""><i class="far fa-edit"></i></a></p>
 				</div>
       `;
     });
@@ -41,7 +41,7 @@ const index = async evt => {
     $('#table').fadeIn('slow');
   } catch (e) {
     customSwal.fire({
-      title: e,
+      title: "Ops! Nenhum aluno encontrado.",
       icon: 'error'
     }); 
   }
