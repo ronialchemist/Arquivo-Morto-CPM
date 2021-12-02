@@ -33,7 +33,9 @@ const index = async evt => {
 				  <p>${file.number}</p>
 					<p>${file.name}</p>
 					<p>${file.box}</p>
+					<p>${file.time_course}</p>
 					<p><a href=""><i class="far fa-edit"></i></a></p>
+					<p><a href=""><i class="far fa-trash-alt"></i></a></p>
 				</div>
       `;
     });
@@ -41,7 +43,7 @@ const index = async evt => {
     $('#table').fadeIn('slow');
   } catch (e) {
     customSwal.fire({
-      title: "Ops! Nenhum aluno encontrado.",
+      title: e,
       icon: 'error'
     }); 
   }
@@ -73,8 +75,6 @@ const create = async evt => {
       */
       body: JSON.stringify({ number: ''/*registerFormValues[0]*/, name: registerFormValues[2], box: registerFormValues[1] })
     });
-
-    console.log(response);
   } catch (e) {
     customSwal.fire({
       title: e,
