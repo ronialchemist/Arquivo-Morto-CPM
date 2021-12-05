@@ -34,8 +34,6 @@ const index = async evt => {
 					<p>${file.name}</p>
 					<p>${file.box}</p>
 					<p>${file.time_course}</p>
-					<p><a href=""><i class="far fa-edit"></i></a></p>
-					<p><a href=""><i class="far fa-trash-alt"></i></a></p>
 				</div>
       `;
     });
@@ -73,8 +71,24 @@ const create = async evt => {
         'Content-Type': 'application/json'
       },
       */
-      body: JSON.stringify({ number: ''/*registerFormValues[0]*/, name: registerFormValues[2], box: registerFormValues[1] })
+      body: JSON.stringify({ number: registerFormValues[0], name: registerFormValues[2], box: registerFormValues[1], time_course: 'DIURNO' })
     });
+
+    if (response.status !== 201) {
+      customSwal.fire({
+        title: 'erro ao cadastrar arquivo',
+        icon: 'error'
+      });
+    } else {
+      customSwal.fire({
+        title: 'arquivo cadastrado com sucesso',
+        icon: 'success'
+      });
+
+      selectAllElements('.registerInput').forEach(input => {
+        input.value = '';
+      });
+    }
   } catch (e) {
     customSwal.fire({
       title: e,
